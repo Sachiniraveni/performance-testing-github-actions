@@ -27,8 +27,7 @@ jobs:
           path: Subscription.csv
 
       - name: Run tests
-        uses: QAInsights/PerfAction@2.0
-#         run: Jmeter -g Subscription.csv -o Resultdir/
+        run: Jmeter -g Subscription.csv -o Resultdir/
 
 
 
