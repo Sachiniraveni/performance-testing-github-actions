@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Run JMeter Tests
-        uses: QAInsights/perfAction@v2.0
+        uses: QAInsights/PerfAction@v2.0
         with:
           test-plan-path: ./Testplans/S01_SimpleExample.jmx
           args: "-Jthreads=1 -Jcount=1 -Jrump=1"
