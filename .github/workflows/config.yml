@@ -12,16 +12,16 @@ jobs:
 
     steps:
       - name: Git clone our repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Run JMeter Tests
-        uses: QAInsights/PerfAction@v2
+        uses: QAInsights/PerfAction@2.0
         with:
           test-plan-path: ./Testplans/S01_SimpleExample.jmx
           args: "-Jthreads=1 -Jcount=1 -Jrump=1"
 
       - name: Upload Results
-        uses: actions/upload-artifact@2.0
+        uses: actions/upload-artifact@v2
         with:
           name: jmeter-results
           path: Subscription.csv
