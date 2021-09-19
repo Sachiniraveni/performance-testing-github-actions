@@ -25,6 +25,9 @@ jobs:
         with:
           name: jmeter-results
           path: Subscription.csv
+      
+      - name: check
+        run: ls
 
       - name: Run tests
         uses: QAInsights/PerfAction@2.0
