@@ -1,0 +1,40 @@
+name: Github Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  performance-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git clone our repository
+        uses: actions/checkout@v1
+
+      - name: Run JMeter Tests
+        uses: QAInsights/perfAction@v2.0
+        with:
+          test-plan-path: ./Testplans/S01_SimpleExample.jmx
+          args: "-Jthreads=1 -Jcount=1 -Jrump=1"
+
+      - name: Upload Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: jmeter-results
+          path: Subscription.csv
+
+      - name: Run tests
+        uses: QAInsights/perfAction@v2.0
+        run: Jmeter -g Subscription.csv -o Resultdir/
+
+
+
+
+
+
+
+
+# jmeter -t TestPlan.jmx -Jthreads=10 -Jcount=50 -Jrumpup=5
