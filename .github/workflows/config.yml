@@ -21,13 +21,13 @@ jobs:
           args: "-Jthreads=1 -Jcount=1 -Jrump=1"
 
       - name: Upload Results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@2.0
         with:
           name: jmeter-results
           path: Subscription.csv
 
       - name: Run tests
-        uses: QAInsights/PerfAction@v2
+        uses: QAInsights/PerfAction@2.0
 #         run: Jmeter -g Subscription.csv -o Resultdir/
 
 
