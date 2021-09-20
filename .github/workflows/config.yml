@@ -32,15 +32,15 @@ jobs:
       - name: Run tests
         uses: QAInsights/PerfAction@2.0
         with:
-          test-plan-path: Subscription.csv
-          args: -n -g Subscription.csv -o Resultdir/
+          test-plan-path: -g Subscription.csv
+          args: "-o Resultdir/"
     
      
-      - name: Upload Results
-        uses: actions/upload-artifact@v2
-        with:
-          name: jmeter-results
-          path: Resultdir/
+#       - name: Upload Results
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: jmeter-results
+#           path: Resultdir/
 
 
 
