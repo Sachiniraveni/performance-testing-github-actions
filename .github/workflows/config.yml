@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: jmeter-results
-          path: testresult.jtl
+          path: result.jtl
       
       - name: check
         run: ls
