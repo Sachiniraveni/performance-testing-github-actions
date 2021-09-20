@@ -34,6 +34,7 @@ jobs:
         with: 
           testFilePath: Subscription.csv
           outputReportsFolder: reports/
+          args: "-g Subscription.csv"
           
 
 
