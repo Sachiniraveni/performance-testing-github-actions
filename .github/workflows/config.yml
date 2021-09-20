@@ -22,7 +22,7 @@ jobs:
           args: "-Jthreads=1 -Jcount=1 -Jrump=1"
       
       - name: check
-        run: ls
+        run: ls && ls reports
 
       - name: Generating Reports
         uses: ./
