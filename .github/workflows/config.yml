@@ -29,11 +29,14 @@ jobs:
       - name: check
         run: ls
 
-      - name: Run tests
-        uses: QAInsights/PerfAction@2.0
-        with:
-          test-plan-path: -g Subscription.csv
-          args: "-o Resultdir/"
+      - name: Generating Reports
+        uses: rbhadti94/apache-jmeter-action@0.3.1
+        with: 
+          testFilePath: Subsccription.csv
+          outputReportsFolder: reports/
+          
+
+
     
      
 #       - name: Upload Results
