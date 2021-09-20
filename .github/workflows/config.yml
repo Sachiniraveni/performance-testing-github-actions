@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: jmeter-results
-          path: Subscription.csv
+          path: testresult.jtl
       
       - name: check
         run: ls
@@ -32,7 +32,15 @@ jobs:
       - name: Run tests
         uses: QAInsights/PerfAction@2.0
         with:
-          test-plan-path: Subscription.csv -o Resultdir/
+          test-plan-path: Subscription.csv
+          args: "-g"
+    
+     
+      - name: Upload Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: jmeter-results
+          path: Resultdir/
 
 
 
