@@ -32,7 +32,7 @@ jobs:
       - name: Generating Reports
         uses: rbhadti94/apache-jmeter-action@v0.3.1
         with: 
-          testFilePath: Subsccription.csv
+          testFilePath: Subscription.csv
           outputReportsFolder: reports/
           
 
