@@ -21,14 +21,19 @@ jobs:
           outputReportsFolder: reports/
           args: "-Jthreads=1 -Jcount=1 -Jrump=1"
       
+      - uses: actions/upload-artifact@v1
+        with:
+          name: jmeter-test-results
+          path: reports/
+      
       - name: check
         run: ls && ls reports
 
-      - name: Generating Reports
-        uses: ./
-        with: 
-          testFilePath: -g Subscription.csv
-          outputReportsFolder: reports/
+#       - name: Generating Reports
+#         uses: ./
+#         with: 
+#           testFilePath: -g Subscription.csv
+#           outputReportsFolder: reports/
           
 
 
