@@ -34,7 +34,7 @@ jobs:
         with: 
           testFilePath: ./Testplans/S01_SimpleExample.jmx
           outputReportsFolder: reports/
-          args: "-g Subscription.csv -o Reportsdir/"
+          args: "-g Subscription.csv"
           
 
 
