@@ -33,7 +33,7 @@ jobs:
         uses: QAInsights/PerfAction@2.0
         with:
           test-plan-path: Subscription.csv
-          args: -g Subscription.csv -o Resultdir/
+          args: -n -g Subscription.csv -o Resultdir/
     
      
       - name: Upload Results
