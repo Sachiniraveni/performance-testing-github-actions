@@ -4,7 +4,14 @@ on:
   push:
     branches:
       - main
-
+  workflow_dispatch:
+    inputs:
+      filename:
+        description: "File Name"
+        required: True
+        
+      
+        
 
 jobs:
   performance-tests:
