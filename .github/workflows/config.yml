@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: echo "${{ github.event.inputs.filename}}"
+      
       - name: Git clone our repository
         uses: actions/checkout@v2
 
