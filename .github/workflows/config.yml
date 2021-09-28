@@ -13,22 +13,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Cache node modules
-        id: myCacheStep
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-jmter-dependencies
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+#       - name: Cache node modules
+#         id: myCacheStep
+#         uses: actions/cache@v2
+#         env:
+#           cache-name: cache-jmter-dependencies
+#         with:
+#           path: ~/.m2
+#           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+#           restore-keys: |
+#             ${{ runner.os }}-build-${{ env.cache-name }}-
+#             ${{ runner.os }}-build-
+#             ${{ runner.os }}-
             
-      - name: Install Dependencies
-        if: steps.myCacheStep.outputs.cache-hit != 'true'
-        uses: rbhadti94/apache-jmeter-action@v0.3.1      
+#       - name: Install Dependencies
+#         if: steps.myCacheStep.outputs.cache-hit != 'true'
+#         uses: rbhadti94/apache-jmeter-action@v0.3.1      
       
       - name: Git clone our repository
         uses: actions/checkout@v2
